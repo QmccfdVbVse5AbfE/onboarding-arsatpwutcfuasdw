@@ -9,8 +9,13 @@ public class MathBotTest {
   @Test
   public void testAddition() {
     MathBot matherator9000 = new MathBot();
-    double output = matherator9000.add(10.5, 3);
-    assertEquals(13.5, output, 0.01);
+    double output1 = matherator9000.add(10.5, 3);
+    assertEquals(13.5, output1, 0.01);
+
+//    MathBot add2 = new MathBot();
+//    double output2 = add2.add(-9, 0);
+//    assertEquals(9.0, output2, 0.01);
+
   }
 
   @Test

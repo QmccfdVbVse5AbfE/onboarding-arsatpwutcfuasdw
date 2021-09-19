@@ -1,0 +1,7 @@
+ARGS
+
+INPUT
+add -6 0
+OUTPUT
+-6.0
+END
