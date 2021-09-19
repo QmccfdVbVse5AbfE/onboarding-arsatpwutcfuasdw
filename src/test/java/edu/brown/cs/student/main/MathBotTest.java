@@ -11,11 +11,6 @@ public class MathBotTest {
     MathBot matherator9000 = new MathBot();
     double output1 = matherator9000.add(10.5, 3);
     assertEquals(13.5, output1, 0.01);
-
-//    MathBot add2 = new MathBot();
-//    double output2 = add2.add(-9, 0);
-//    assertEquals(9.0, output2, 0.01);
-
   }
 
   @Test
@@ -32,5 +27,17 @@ public class MathBotTest {
     assertEquals(1, output, 0.01);
   }
 
-  // TODO: add more unit tests of your own
+  @Test
+  public void testDecimalsAdd() {
+    MathBot matherator9003 = new MathBot();
+    double output1 = matherator9003.add(.01, .01);
+    assertEquals(.02, output1, 0.01);
+  }
+
+  @Test
+  public void testDecimalsSubtract() {
+    MathBot matherator9004 = new MathBot();
+    double output1 = matherator9004.subtract(.01, .01);
+    assertEquals(0.0, output1, 0.01);
+  }
 }

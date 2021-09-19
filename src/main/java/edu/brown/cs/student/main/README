@@ -1,0 +1,22 @@
+Project Name: Onboarding
+Team Members: Michelle Lee
+Time Spent on Project: 20 hours
+--- However, this is because it took a while to onboard & get accustomed to Java
+
+------------------ Design Choices ------------------
+For this project I decided to create 2 new classes: CSV reader and stars.
+As indicated by the name, CSV reader contains the method for reading a csv
+and stars contains the methods for naive_neighbor. As a note, my nearestStar
+function doesn't work right now && I've tried numerous implementation but it
+still doesn't work.
+
+I created two classes because I thought it would make the code easier to read. I
+didn't want the main file to be too long. In addition, since we are dealing with
+multiple star objects, it makes sense to create a class for this as opposed to
+storing this data in a hashmap.
+
+------------------ Errors and Bugs ------------------
+As of right now, the naive_neighbors functions do not work because my nearestStar
+method in the Stars file is not properly creating an array with the closest stars.
+
+------------------ Testing ------------------
