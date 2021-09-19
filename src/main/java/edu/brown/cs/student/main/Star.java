@@ -90,28 +90,35 @@ public class Star {
     return maxValue;
   }
 
+  //throws an indexoutofbounds excception but unsure why
   public ArrayList<Integer> nearestStar3(Star star, ArrayList<Star> data, int k) {
     ArrayList<Integer> nearStars = new ArrayList<Integer>(k);
     ArrayList<Double> nearestDistance = new ArrayList<Double>(k);
     HashMap<Integer, Double> distanceMap = new HashMap<Integer, Double>();
-
+    //put the distance and star id into a hashmap
     for (Star n : data) {
       distanceMap.put(n.starID, findDistance(star, n));
     }
 
-    for (int i =0; i<k; i++) {
-      nearestDistance.set(i, Double.POSITIVE_INFINITY);
+    //fills the nearStars array with 0's and the nearestDistance with infinity
+    int x = 0;
+    while (x < k) {
+      nearestDistance.set(x, Double.POSITIVE_INFINITY);
+      nearStars.set(x, 0);
+      x = x + 1;
     }
-
+    //store the value of the maximum distance of the nearestDistance array
     Double maxDistance = star.maxArrayValue(nearestDistance);
 
     for (int i : distanceMap.keySet()) {
-      if (distanceMap.get(i) < maxDistance) {
-        int index = nearestDistance.indexOf(maxDistance);
-        nearStars.set(index, i);
-        nearestDistance.set(index, distanceMap.get(i));
+      if (star.starID != i) {
+        if (distanceMap.get(i) < maxDistance) {
+          int index = nearestDistance.indexOf(maxDistance);
+          nearStars.set(index, i);
+          nearestDistance.set(index, distanceMap.get(i));
+        }
+        maxDistance = star.maxArrayValue(nearestDistance);
       }
-      maxDistance = star.maxArrayValue(nearestDistance);
     }
     return nearStars;
   }
