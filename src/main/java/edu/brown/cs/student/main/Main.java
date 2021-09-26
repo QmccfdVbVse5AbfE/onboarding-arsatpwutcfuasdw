@@ -84,6 +84,9 @@ public final class Main {
           }
 //project
           //stars input & reading a CSV file
+          
+          //I like how compact and easy to follow logically your code is! 
+          //Some more comments would be great, but even as is the code is pretty broken up which is nice.
          else if (arguments[0].equals("stars") && arguments.length == 2) {
            CsvReader csv = new CsvReader(starData);
            csv.readCSV(arguments[1]);
@@ -92,7 +95,7 @@ public final class Main {
 
           else if (arguments[0].equals("naive_neighbors")) {
             if (arguments.length == 5) {
-              Star newStar = new Star(923847332, "n/a", Double.parseDouble(arguments[2]),
+              Star newStar = new Star(923847332, "n/a", Double.parseDouble(arguments[2]), 
                   Double.parseDouble(arguments[3]), Double.parseDouble(arguments[4]));
               ArrayList<Integer> closeStars = newStar.nearestStar(newStar, starData, Integer.parseInt(arguments[1]));
               if (!closeStars.isEmpty()) {
@@ -105,6 +108,7 @@ public final class Main {
             //if 3 arguments are inputted in the terminal
             else if (arguments.length == 3) {
               String starName = arguments[2].substring(1, arguments[2].length()-1);
+              //some stars have a space in their name, which to the terminal will be read as different arguments, which won't work with this section.
               Star dummyStar = new Star(2130428133, "test",0, 0, 0);
               for (Star starcompare: starData) {
                 if (starcompare.properName.equals(starName)) {
@@ -171,6 +175,7 @@ public final class Main {
   /**
    * Display an error page when an exception occurs in the server.
    */
+  //I have never seen an exception printer before, so this is very cool and helpful.
   private static class ExceptionPrinter implements ExceptionHandler<Exception> {
     @Override
     public void handle(Exception e, Request req, Response res) {
