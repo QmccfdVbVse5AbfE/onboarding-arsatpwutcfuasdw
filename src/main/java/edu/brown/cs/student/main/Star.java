@@ -9,6 +9,8 @@ import java.util.Comparator;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+//I like adding the star class, but with it getter should also probably be added, so no values are accidentally reassigned.
+  
 public class Star {
   public int starID;
   public String properName;
@@ -32,6 +34,7 @@ public class Star {
   }
 
 //I tried a couple of implementations of finding the nearest star, however, none of them are curerntly working.
+  //I like that the potential implemenations of nearest star are all pretty different, and that you didn't just try brute force one until it worked.
   public ArrayList<Integer> nearestStar(Star star, ArrayList<Star> data, int k) {
     ArrayList<Integer> nearStars = new ArrayList<Integer>();
     HashMap<Star, Double> distanceMap = new HashMap<Star, Double>();
@@ -39,6 +42,12 @@ public class Star {
     for (Star n : data) {
       distanceMap.put(n, findDistance(star, n));
     }
+    //I am a little confused with this loop. I think it has us grabbing every star from distancemap, which we just made. \
+    //Grabbing our current star's distance, then checking to see if that is less than our minDistance. 
+    //if it is we add it to the list, if not we don't do anything with it.
+    //But what happens if we give it a list where the lowest distance is the first star hit. Then nearStars
+    //would only contain the lowest star and nothing else.
+    
     int i = 0;
     double minDistance = Double.POSITIVE_INFINITY;
     while (i < k) {
