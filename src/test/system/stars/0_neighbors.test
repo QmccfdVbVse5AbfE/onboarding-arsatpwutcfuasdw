@@ -4,3 +4,7 @@ naive_neighbors 0 0 0 0
 OUTPUT
 Read 10 stars from data/stars/ten-star.csv
 END
+
+//These are all really great tests! The only thing I would say is potentially outputing the names instead of the ids. 
+//I would also consider testing over-riding the csv file, and what happens when two equal distances are in the stars. 
+//A few more multi-commands too might be helpful, like running two different naive neighbors back to back
